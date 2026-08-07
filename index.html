@@ -1,0 +1,540 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Create imaginative affirmation image prompts with characters, surprise scenes, affirmations, and thought bubbles."
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Surprise Affirmation Studio</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="brand-intro">
+        <p class="eyebrow">Dream it. Affirm it. Create it.</p>
+        <h1>Surprise Affirmation Studio</h1>
+        <p>
+          Create one complete image prompt filled with an adult character, an
+          imaginative scene, an affirmation, and a fun thought bubble.
+        </p>
+      </div>
+
+      <div class="top-actions" aria-label="Generator actions">
+        <button type="button" id="randomize-button">Randomize</button>
+        <button type="button" id="generate-button-top">Generate Prompt</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="generator" aria-labelledby="generator-title">
+        <div class="section-heading">
+          <p class="step-label">Build your vision</p>
+          <h2 id="generator-title">Choose your prompt details</h2>
+          <p>
+            Select your favorites, add custom ideas, or use Randomize for a
+            complete surprise. Lock any choice you want to keep.
+          </p>
+        </div>
+
+        <nav
+          class="generator-tabs"
+          aria-label="Prompt categories"
+          role="tablist"
+        >
+          <button
+            type="button"
+            id="presets-tab"
+            class="tab-button active"
+            role="tab"
+            aria-selected="true"
+            aria-controls="presets-panel"
+          >
+            Presets
+          </button>
+          <button
+            type="button"
+            id="character-tab"
+            class="tab-button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="character-panel"
+          >
+            Character
+          </button>
+          <button
+            type="button"
+            id="scene-tab"
+            class="tab-button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="scene-panel"
+          >
+            Scene
+          </button>
+          <button
+            type="button"
+            id="affirmation-tab"
+            class="tab-button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="affirmation-panel"
+          >
+            Affirmation
+          </button>
+          <button
+            type="button"
+            id="thought-bubble-tab"
+            class="tab-button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="thought-bubble-panel"
+          >
+            Thought Bubble
+          </button>
+        </nav>
+
+        <div class="tab-panels">
+          <section
+            id="presets-panel"
+            class="tab-panel active"
+            role="tabpanel"
+            aria-labelledby="presets-tab"
+          >
+            <div class="panel-heading">
+              <div>
+                <p class="category-label">Quick-start combinations</p>
+                <h3>Presets</h3>
+                <p>
+                  Choose a ready-made direction, then change any details you
+                  like.
+                </p>
+              </div>
+              <button
+                type="button"
+                class="lock-button"
+                data-lock="preset"
+                aria-pressed="false"
+              >
+                Lock Preset
+              </button>
+            </div>
+
+            <div class="choice-grid preset-grid">
+              <label class="choice-card">
+                <input type="radio" name="preset" value="cosmic-confidence" />
+                <span class="choice-title">Cosmic Confidence</span>
+                <span class="choice-description"
+                  >A bold space adventure filled with fearless energy.</span
+                >
+              </label>
+              <label class="choice-card">
+                <input type="radio" name="preset" value="luxury-at-sea" />
+                <span class="choice-title">Luxury at Sea</span>
+                <span class="choice-description"
+                  >A glamorous boat scene celebrating peace and abundance.</span
+                >
+              </label>
+              <label class="choice-card">
+                <input type="radio" name="preset" value="enchanted-garden" />
+                <span class="choice-title">Enchanted Garden</span>
+                <span class="choice-description"
+                  >A dreamy floral world centered on growth and self-love.</span
+                >
+              </label>
+              <label class="choice-card">
+                <input type="radio" name="preset" value="candy-dreams" />
+                <span class="choice-title">Candy Dreams</span>
+                <span class="choice-description"
+                  >A playful candy world with bright, joyful motivation.</span
+                >
+              </label>
+              <label class="choice-card">
+                <input type="radio" name="preset" value="underwater-wonder" />
+                <span class="choice-title">Underwater Wonder</span>
+                <span class="choice-description"
+                  >A magical ocean setting focused on calm and inner
+                  power.</span
+                >
+              </label>
+              <label class="choice-card">
+                <input type="radio" name="preset" value="city-of-possibility" />
+                <span class="choice-title">City of Possibility</span>
+                <span class="choice-description"
+                  >A whimsical city scene built around ambition and
+                  success.</span
+                >
+              </label>
+            </div>
+          </section>
+
+          <section
+            id="character-panel"
+            class="tab-panel"
+            role="tabpanel"
+            aria-labelledby="character-tab"
+            hidden
+          >
+            <div class="panel-heading">
+              <div>
+                <p class="category-label">Who appears in the image?</p>
+                <h3>Character</h3>
+                <p>Choose one adult character setup or describe your own.</p>
+              </div>
+              <button
+                type="button"
+                class="lock-button"
+                data-lock="character"
+                aria-pressed="false"
+              >
+                Lock Character
+              </button>
+            </div>
+
+            <div class="choice-grid">
+              <label class="choice-card">
+                <input type="radio" name="character" value="adult-woman" />
+                <span class="choice-title">Adult Woman</span>
+                <span class="choice-description"
+                  >A clearly adult woman with confident, expressive
+                  energy.</span
+                >
+              </label>
+              <label class="choice-card">
+                <input type="radio" name="character" value="adult-man" />
+                <span class="choice-title">Adult Man</span>
+                <span class="choice-description"
+                  >A clearly adult, masculine man with confident presence.</span
+                >
+              </label>
+              <label class="choice-card">
+                <input type="radio" name="character" value="adult-couple" />
+                <span class="choice-title">Adult Couple</span>
+                <span class="choice-description"
+                  >Two clearly adult characters sharing the scene.</span
+                >
+              </label>
+              <label class="choice-card">
+                <input type="radio" name="character" value="adult-group" />
+                <span class="choice-title">Adult Group</span>
+                <span class="choice-description"
+                  >A small group of clearly adult characters.</span
+                >
+              </label>
+            </div>
+
+            <div class="custom-field">
+              <label for="custom-character">Custom character details</label>
+              <p id="custom-character-help">
+                Add details such as age, skin tone, body type, hair, clothing,
+                or personality.
+              </p>
+              <textarea
+                id="custom-character"
+                name="custom-character"
+                rows="4"
+                aria-describedby="custom-character-help"
+                placeholder="Example: A confident plus-size Black woman in her 40s with long braids and a flowing purple outfit"
+              ></textarea>
+            </div>
+          </section>
+
+          <section
+            id="scene-panel"
+            class="tab-panel"
+            role="tabpanel"
+            aria-labelledby="scene-tab"
+            hidden
+          >
+            <div class="panel-heading">
+              <div>
+                <p class="category-label">Where does it happen?</p>
+                <h3>Scene</h3>
+                <p>
+                  Choose an imaginative setting or add your own surprise idea.
+                </p>
+              </div>
+              <button
+                type="button"
+                class="lock-button"
+                data-lock="scene"
+                aria-pressed="false"
+              >
+                Lock Scene
+              </button>
+            </div>
+
+            <div class="choice-grid">
+              <label class="choice-card">
+                <input type="radio" name="scene" value="alien-world" />
+                <span class="choice-title">Alien World</span>
+                <span class="choice-description"
+                  >Colorful planets, unusual landscapes, and friendly cosmic
+                  life.</span
+                >
+              </label>
+              <label class="choice-card">
+                <input type="radio" name="scene" value="luxury-boat" />
+                <span class="choice-title">Luxury Boat</span>
+                <span class="choice-description"
+                  >Open water, soft sunlight, and an elegant boat getaway.</span
+                >
+              </label>
+              <label class="choice-card">
+                <input type="radio" name="scene" value="enchanted-garden" />
+                <span class="choice-title">Enchanted Garden</span>
+                <span class="choice-description"
+                  >Oversized flowers, dreamy clouds, and gentle magical
+                  light.</span
+                >
+              </label>
+              <label class="choice-card">
+                <input type="radio" name="scene" value="candy-kingdom" />
+                <span class="choice-title">Candy Kingdom</span>
+                <span class="choice-description"
+                  >Playful sweets, glossy colors, and larger-than-life
+                  treats.</span
+                >
+              </label>
+              <label class="choice-card">
+                <input type="radio" name="scene" value="underwater-world" />
+                <span class="choice-title">Underwater World</span>
+                <span class="choice-description"
+                  >Glowing coral, graceful sea life, and sparkling blue
+                  water.</span
+                >
+              </label>
+              <label class="choice-card">
+                <input type="radio" name="scene" value="whimsical-city" />
+                <span class="choice-title">Whimsical City</span>
+                <span class="choice-description"
+                  >Curved buildings, floating streets, and unexpected city
+                  magic.</span
+                >
+              </label>
+            </div>
+
+            <div class="custom-field">
+              <label for="custom-scene">Custom scene idea</label>
+              <p id="custom-scene-help">
+                Describe any location, activity, atmosphere, or surprise detail
+                you want.
+              </p>
+              <textarea
+                id="custom-scene"
+                name="custom-scene"
+                rows="4"
+                aria-describedby="custom-scene-help"
+                placeholder="Example: Riding through lavender clouds inside a silver teacup-shaped hot-air balloon"
+              ></textarea>
+            </div>
+          </section>
+
+          <section
+            id="affirmation-panel"
+            class="tab-panel"
+            role="tabpanel"
+            aria-labelledby="affirmation-tab"
+            hidden
+          >
+            <div class="panel-heading">
+              <div>
+                <p class="category-label">What is the message?</p>
+                <h3>Affirmation</h3>
+                <p>
+                  Choose a theme or write the exact affirmation you want shown.
+                </p>
+              </div>
+              <button
+                type="button"
+                class="lock-button"
+                data-lock="affirmation"
+                aria-pressed="false"
+              >
+                Lock Affirmation
+              </button>
+            </div>
+
+            <div class="choice-grid">
+              <label class="choice-card">
+                <input type="radio" name="affirmation" value="confidence" />
+                <span class="choice-title">Confidence</span>
+                <span class="choice-description"
+                  >Bold reminders of worth, courage, and personal power.</span
+                >
+              </label>
+              <label class="choice-card">
+                <input type="radio" name="affirmation" value="self-love" />
+                <span class="choice-title">Self-Love</span>
+                <span class="choice-description"
+                  >Warm words about acceptance, care, and being enough.</span
+                >
+              </label>
+              <label class="choice-card">
+                <input type="radio" name="affirmation" value="abundance" />
+                <span class="choice-title">Abundance</span>
+                <span class="choice-description"
+                  >Positive messages about opportunity, support, and
+                  receiving.</span
+                >
+              </label>
+              <label class="choice-card">
+                <input type="radio" name="affirmation" value="peace" />
+                <span class="choice-title">Peace</span>
+                <span class="choice-description"
+                  >Calming reminders about rest, balance, and inner
+                  safety.</span
+                >
+              </label>
+              <label class="choice-card">
+                <input type="radio" name="affirmation" value="growth" />
+                <span class="choice-title">Growth</span>
+                <span class="choice-description"
+                  >Encouragement for change, healing, and new beginnings.</span
+                >
+              </label>
+              <label class="choice-card">
+                <input type="radio" name="affirmation" value="success" />
+                <span class="choice-title">Success</span>
+                <span class="choice-description"
+                  >Motivation for goals, focus, progress, and achievement.</span
+                >
+              </label>
+            </div>
+
+            <div class="custom-field">
+              <label for="custom-affirmation">Custom affirmation</label>
+              <p id="custom-affirmation-help">
+                Write the exact words that should appear in the finished image.
+              </p>
+              <textarea
+                id="custom-affirmation"
+                name="custom-affirmation"
+                rows="3"
+                aria-describedby="custom-affirmation-help"
+                placeholder="Example: I trust myself to create a life that feels good to me"
+              ></textarea>
+            </div>
+          </section>
+
+          <section
+            id="thought-bubble-panel"
+            class="tab-panel"
+            role="tabpanel"
+            aria-labelledby="thought-bubble-tab"
+            hidden
+          >
+            <div class="panel-heading">
+              <div>
+                <p class="category-label">How should the thought appear?</p>
+                <h3>Thought Bubble</h3>
+                <p>
+                  Choose the bubble style and add an optional short thought.
+                </p>
+              </div>
+              <button
+                type="button"
+                class="lock-button"
+                data-lock="thought-bubble"
+                aria-pressed="false"
+              >
+                Lock Thought Bubble
+              </button>
+            </div>
+
+            <div class="choice-grid">
+              <label class="choice-card">
+                <input
+                  type="radio"
+                  name="thought-bubble"
+                  value="classic-cloud"
+                />
+                <span class="choice-title">Classic Cloud</span>
+                <span class="choice-description"
+                  >A clean, rounded cloud bubble with a soft outline.</span
+                >
+              </label>
+              <label class="choice-card">
+                <input type="radio" name="thought-bubble" value="dreamy-glow" />
+                <span class="choice-title">Dreamy Glow</span>
+                <span class="choice-description"
+                  >A soft glowing bubble that feels light and magical.</span
+                >
+              </label>
+              <label class="choice-card">
+                <input type="radio" name="thought-bubble" value="comic-pop" />
+                <span class="choice-title">Comic Pop</span>
+                <span class="choice-description"
+                  >A bold, playful bubble with expressive energy.</span
+                >
+              </label>
+              <label class="choice-card">
+                <input
+                  type="radio"
+                  name="thought-bubble"
+                  value="silver-shimmer"
+                />
+                <span class="choice-title">Silver Shimmer</span>
+                <span class="choice-description"
+                  >A polished silver-edged bubble with subtle shine.</span
+                >
+              </label>
+            </div>
+
+            <div class="custom-field">
+              <label for="custom-thought">Custom thought-bubble text</label>
+              <p id="custom-thought-help">
+                Add a short thought that supports the main affirmation without
+                repeating it.
+              </p>
+              <input
+                type="text"
+                id="custom-thought"
+                name="custom-thought"
+                aria-describedby="custom-thought-help"
+                placeholder="Example: I was made for this"
+              />
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <section class="prompt-results" aria-labelledby="results-title">
+        <div class="section-heading results-heading">
+          <div>
+            <p class="step-label">Your finished creation</p>
+            <h2 id="results-title">Final Image Prompt</h2>
+            <p>
+              Your complete prompt will appear here after you choose Generate
+              Prompt.
+            </p>
+          </div>
+          <button type="button" id="copy-button">Copy Prompt</button>
+        </div>
+
+        <label for="prompt-output" class="visually-hidden"
+          >Generated image prompt</label
+        >
+        <textarea
+          id="prompt-output"
+          name="prompt-output"
+          rows="12"
+          readonly
+          placeholder="Your generated affirmation image prompt will appear here..."
+        ></textarea>
+        <p id="copy-status" class="status-message" aria-live="polite"></p>
+
+        <div class="bottom-actions" aria-label="Final prompt actions">
+          <button type="button" id="clear-button">Clear</button>
+          <button type="button" id="generate-button">Generate Prompt</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Surprise Affirmation Studio</p>
+    </footer>
+    <script src="js/script.js"></script>
+  </body>
+</html>
